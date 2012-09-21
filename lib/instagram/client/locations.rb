@@ -54,6 +54,18 @@ module Instagram
         response = get('locations/search', options.merge(:lat => lat, :lng => lng))
         response["data"]
       end
+      
+      # Returns Instagram locations via Foursquare V2 ID
+      #
+
+      # @format :json
+      # @authenticated false
+      # @rate_limited true
+      def location_search(lat, lng, options={})
+        response = get('locations/search_foursquare', options.merge(:FOURSQUARE_V2_ID => foursquare))
+        response["data"]
+      end
+      
     end
   end
 end
