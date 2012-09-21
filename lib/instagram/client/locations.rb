@@ -62,7 +62,7 @@ module Instagram
       # @authenticated false
       # @rate_limited true
       def location_search_foursquare(foursquare, options={})
-        response = get('locations/search_foursquare', options.merge(:FOURSQUARE_V2_ID => foursquare))
+        response = get('locations/search', options.merge(:FOURSQUARE_V2_ID => foursquare))
         response["data"]
       end
       
